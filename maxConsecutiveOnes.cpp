@@ -6,7 +6,7 @@ int maxConsecutiveOnes( int &N )
     int count = 0;
     
     while( N != 0 ) {
-        N = N << 1;
+        N = N & (N << 1);
         count++ ;
     }
     
@@ -15,9 +15,12 @@ int maxConsecutiveOnes( int &N )
 
 int main(){
     
-    int n = 10111001;
+    int n = 7;
     
     cout<<maxConsecutiveOnes(n)<<endl;
     
     return 0;
 }
+
+// binary rep of 7 = 111
+// count = 3
